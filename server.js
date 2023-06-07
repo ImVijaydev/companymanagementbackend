@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const companyRoutes = require('./routes/companyRoutes');
 const userRoutes = require('./routes/userRoutes');
-const hostname = '0.0.0.0';
 
 const app = express();
 app.use(cors());
@@ -14,6 +13,6 @@ app.use(bodyParser.json());
 app.use('/companies', companyRoutes);
 app.use('/user', userRoutes);
 
-app.listen(port, hostname, () => {
-  console.log(`Server listening at http://${hostname}:${port}/`);
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
